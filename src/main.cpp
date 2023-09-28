@@ -23,6 +23,8 @@ int main() {
 			std::cin >> c_x >> c_y;
 			circle->setCoordinate(c_x, c_y);
 			circle->setCoordinateDescrRect(circle->getRadius());
+			std::cout << std::endl;
+			circle->getName();
 			circle->getSquare();
 			circle->getColour();
 			circle->getCoordinateDescRect();

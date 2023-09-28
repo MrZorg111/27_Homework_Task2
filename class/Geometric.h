@@ -4,40 +4,36 @@
 
 
  enum Colour {
-        RED = 0,
-        BLUE,
+        NONE = 0,
+        RED,
         GREEN,
-        NONE
+        BLUE
     };
 
 class Geometric {
-    double coordinate_x;
-    double coordinate_y;
+    double coordinate_x = 0;
+    double coordinate_y = 0;
     struct DescrRect {
-        double coordinate_x1, coordinate_x2, coordinate_x3, coordinate_x4;
-        double coordinate_y1, coordinate_y2, coordinate_y3, coordinate_y4;
+        double coordinate_x1 = 0, coordinate_x2 = 0, coordinate_x3 = 0, coordinate_x4 = 0;
+        double coordinate_y1 = 0, coordinate_y2 = 0, coordinate_y3 = 0, coordinate_y4 = 0;
         double step = 0.0001;
    };
-    Colour cl;
+    Colour cl = Colour::NONE;
 public:
     DescrRect des;
     void setColour() {
         std::srand(std::time(nullptr));
         switch (rand() % 4) {
         case 0:
-            std::cout << "YAHHO! 0" << std::endl;
             cl = Colour::NONE;
             break;
         case 1:
-            std::cout << "YAHHO! 1" << std::endl;
             cl = Colour::RED;
             break;
         case 2:
-            std::cout << "YAHHO! 2" << std::endl;
             cl = Colour::GREEN;
             break;
         case 3:
-            std::cout << "YAHHO! 3" << std::endl;
             cl = Colour::BLUE;
             break;
         default: 
@@ -80,6 +76,7 @@ public:
         }
     }
     void getCoordinateDescRect() {
+        std::cout << "Координаты углов описывающего фигуру прямоугольника: " << std::endl;
         std::cout << "Координаты верхнего левого угла: " << des.coordinate_x1 << " " << des.coordinate_y1 << std::endl;
         std::cout << "Кординаты верхнего правого угла: " << des.coordinate_x2 << " " << des.coordinate_y2 << std::endl;
         std::cout << "Координаты нижнего левого угла: " << des.coordinate_x3 << " " << des.coordinate_y3 << std::endl;
