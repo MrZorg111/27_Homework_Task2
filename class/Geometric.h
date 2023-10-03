@@ -13,11 +13,12 @@
 class Geometric {
     double coordinate_x = 0;
     double coordinate_y = 0;
+    double step = 1;
     struct DescrRect {
         double coordinate_x1 = 0, coordinate_x2 = 0, coordinate_x3 = 0, coordinate_x4 = 0;
         double coordinate_y1 = 0, coordinate_y2 = 0, coordinate_y3 = 0, coordinate_y4 = 0;
-        double step = 0.0001;
-   };
+        
+    };
     Colour cl = Colour::NONE;
 public:
     DescrRect des;
@@ -45,17 +46,16 @@ public:
         this->coordinate_x = coordinate_x;
         this->coordinate_y = coordinate_y;
     }
-    void setCoordinateDescrRect(double perssign) {
-         des.coordinate_x1 = coordinate_x - (perssign + des.step);
-         des.coordinate_y1 = coordinate_y + (perssign + des.step);
-         des.coordinate_x2 = coordinate_x + (perssign + des.step);
-         des.coordinate_y2 = coordinate_y + (perssign + des.step);
-         des.coordinate_x3 = coordinate_x - (perssign + des.step);
-         des.coordinate_y3 = coordinate_y - (perssign + des.step);
-         des.coordinate_x4 = coordinate_x + (perssign + des.step);
-         des.coordinate_y4 = coordinate_y - (perssign + des.step);
+   
+    double getCoordinateX() {
+        return coordinate_x;
     }
-    
+    double getCoordinateY() {
+        return coordinate_y;
+    }
+    double getStep() {
+        return step;
+    }
     void getColour() {
         switch (cl) {
             case Colour::NONE:
@@ -82,5 +82,4 @@ public:
         std::cout << "Координаты нижнего левого угла: " << des.coordinate_x3 << " " << des.coordinate_y3 << std::endl;
         std::cout << "Координаты нижнего левого угла: " << des.coordinate_x4 << " " << des.coordinate_y4 << std::endl;
     }
-
 };
