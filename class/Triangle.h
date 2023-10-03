@@ -27,7 +27,7 @@ public:
 	void getName() {
 		std::cout << "Искомая фигура: " << name << std::endl;
 	}
-	void getSquare() {
+	void getArea() {
 		std::cout << "Площадь искомой фигуры равна: " << ((len_edge_tri / 2) * hight) << std::endl;
 	}
 	
