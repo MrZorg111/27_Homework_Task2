@@ -1,7 +1,9 @@
 #include <iostream>
+#include <string>
 #include "Circle.h"
 #include "Triangle.h"
 #include "Square.h"
+#include "Rectangle.h"
 #include "Function.h"
 /*
 Для каждой из фигур требуется определить метод нахождения площади фигуры, 
@@ -14,15 +16,16 @@ int main() {
 	Circle* circle = new Circle();
 	Triangle* triangle = new Triangle();
 	Square* square = new Square();
-	std::string shape;
+	Rectangle* rectangle = new Rectangle();
+	std::string shape, answer;
+	do {
+		std::cout << "Введите название геометрической фигуры: (Circle/Triangle/Square)" << std::endl;
+		std::cin >> shape;
 
-	std::cout << "Введите название геометрической фигуры: (Circle/Triangle/Square)" << std::endl;
-	std::cin >> shape;
-
-	switch (get_name_shape(shape)) {
-		double c_x, c_y;
+		switch (get_name_shape(shape)) {
+			double c_x, c_y;
 		case 1:
-			double r; 
+			double r;
 			std::cout << "Задайте радиус круга: " << std::endl;
 			std::cin >> r;
 			circle->setRadius(r);
@@ -69,11 +72,33 @@ int main() {
 			square->getColour();
 			square->getCoordinateDescRect();
 			break;
+		case 4:
+			double length_rectangle_1, length_rectangle_2;
+			std::cout << "Задайте длины сторон прямоугольника: " << std::endl;
+			std::cin >> length_rectangle_1 >> length_rectangle_2;
+			rectangle->setLengthEdgeRectangle(length_rectangle_1, length_rectangle_2);
+			rectangle->setColour();
+			std::cout << "Задайте координаты центра прямоугольника: " << std::endl;
+			std::cin >> c_x >> c_y;
+			rectangle->setCoordinate(c_x, c_y);
+			rectangle->setCoordinateDescRect();
+			std::cout << std::endl;
+			rectangle->getName();
+			rectangle->getArea();
+			rectangle->getColour();
+			rectangle->getCoordinateDescRect();
+			break;
 		default:
 			std::cout << "Неверный ввод!" << std::endl;
-	}
+		}
+		std::cout << "Желаете продолжить работу программы: (yes/no) " << std::endl;
+		std::cin >> answer;
+	} while (answer == "yes");
 	
 	delete circle;
+	delete triangle;
+	delete square;
+	delete rectangle;
 	
 	return 0;
 }

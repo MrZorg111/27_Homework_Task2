@@ -6,7 +6,7 @@
 class Square : public Geometric {
 	std::string name = "Square";
 	double len_edge_squa;
-	//double ar = len_edge_squa * sqrt(2); оставлю здесь формулу поиска диагонали
+	
 public:
 	void setLengthEdgeSquare(double len_endge_squa) {
 		this->len_edge_squa = len_endge_squa;
