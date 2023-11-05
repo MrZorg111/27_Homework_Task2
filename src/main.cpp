@@ -19,7 +19,7 @@ int main() {
 	Rectangle* rectangle = new Rectangle();
 	std::string shape, answer;
 	do {
-		std::cout << "¬ведите название геометрической фигуры: (Circle/Triangle/Square)" << std::endl;
+		std::cout << "¬ведите название геометрической фигуры: (Circle/Triangle/Square/Rectangle)" << std::endl;
 		std::cin >> shape;
 
 		switch (get_name_shape(shape)) {
