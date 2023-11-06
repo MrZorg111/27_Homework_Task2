@@ -38,7 +38,7 @@ public:
             cl = Colour::BLUE;
             break;
         default: 
-            std::cout << "Неверный ввод! setColour()" << std::endl;
+            std::cout << "Incorrect input! setColour()" << std::endl;
         }
         
     }
@@ -47,6 +47,8 @@ public:
         this->coordinate_y = coordinate_y;
     }
    
+    //____________________________________________________________//
+
     double getCoordinateX() {
         return coordinate_x;
     }
@@ -59,27 +61,27 @@ public:
     void getColour() {
         switch (cl) {
             case Colour::NONE:
-                std::cout << "Цвет отсутствует!" << std::endl;
+                std::cout << "The color is missing!" << std::endl;
                 break;
             case Colour::RED:
-                std::cout << "Цвет Красный!" << std::endl;
+                std::cout << "The color is Red!" << std::endl;
                 break;
             case Colour::GREEN:
-                std::cout << "Цвет Зеленый!" << std::endl;
+                std::cout << "The color is Green!" << std::endl;
                 break;
             case Colour::BLUE:
-                std::cout << "Цвет Синий!" << std::endl;
+                std::cout << "The color is Blue!" << std::endl;
                 break;
             defaul:
-                std::cout << "Ошибка вывода данных цвета!" << std::endl;
+                std::cout << "Color data output error!" << std::endl;
 
         }
     }
     void getCoordinateDescRect() {
-        std::cout << "Координаты углов описывающего фигуру прямоугольника: " << std::endl;
-        std::cout << "Координаты верхнего левого угла: " << des.coordinate_x1 << " " << des.coordinate_y1 << std::endl;
-        std::cout << "Кординаты верхнего правого угла: " << des.coordinate_x2 << " " << des.coordinate_y2 << std::endl;
-        std::cout << "Координаты нижнего левого угла: " << des.coordinate_x3 << " " << des.coordinate_y3 << std::endl;
-        std::cout << "Координаты нижнего левого угла: " << des.coordinate_x4 << " " << des.coordinate_y4 << std::endl;
+        std::cout << "Coordinates of the corners of the rectangle describing the shape: " << std::endl;
+        std::cout << "Coordinates of the upper left corner: " << des.coordinate_x1 << " " << des.coordinate_y1 << std::endl;
+        std::cout << "Coordinates of the upper right corner: " << des.coordinate_x2 << " " << des.coordinate_y2 << std::endl;
+        std::cout << "Coordinates of the lower left corner: " << des.coordinate_x3 << " " << des.coordinate_y3 << std::endl;
+        std::cout << "Coordinates of the lower right corner: " << des.coordinate_x4 << " " << des.coordinate_y4 << std::endl;
     }
 };

@@ -5,32 +5,26 @@
 #include "Square.h"
 #include "Rectangle.h"
 #include "Function.h"
-/*
-Для каждой из фигур требуется определить метод нахождения площади фигуры, 
-	а также метод нахождения прямоугольника, описывающего фигуру полностью 
-		(он может быть больше зоны фигуры, но не меньше).
-*/
-int main() {
-	setlocale(LC_ALL, "rus");
 
+int main() {
 	Circle* circle = new Circle();
 	Triangle* triangle = new Triangle();
 	Square* square = new Square();
 	Rectangle* rectangle = new Rectangle();
 	std::string shape, answer;
 	do {
-		std::cout << "Введите название геометрической фигуры: (Circle/Triangle/Square/Rectangle)" << std::endl;
+		std::cout << "Enter the name of the geometric shape: (Circle/Triangle/Square/Rectangle)" << std::endl;
 		std::cin >> shape;
 
 		switch (get_name_shape(shape)) {
 			double c_x, c_y;
 		case 1:
 			double r;
-			std::cout << "Задайте радиус круга: " << std::endl;
+			std::cout << "Set the radius of the circle: " << std::endl;
 			std::cin >> r;
 			circle->setRadius(r);
 			circle->setColour();
-			std::cout << "Задайте координаты центра круга: " << std::endl;
+			std::cout << "Set the coordinates of the center of the circle: " << std::endl;
 			std::cin >> c_x >> c_y;
 			circle->setCoordinate(c_x, c_y);
 			circle->setCoordinateDescrRect();
@@ -42,11 +36,11 @@ int main() {
 			break;
 		case 2:
 			double length_triangle;
-			std::cout << "Задайте длинну стороны треугольника: " << std::endl;
+			std::cout << "Set the length of the triangle side: " << std::endl;
 			std::cin >> length_triangle;
 			triangle->setLengthEdgeTriangle(length_triangle);
 			triangle->setColour();
-			std::cout << "Задайте координаты центра треугольника: " << std::endl;
+			std::cout << "Set the coordinates of the triangle center: " << std::endl;
 			std::cin >> c_x >> c_y;
 			triangle->setCoordinate(c_x, c_y);
 			triangle->setCoordinateDescRect();
@@ -58,12 +52,13 @@ int main() {
 			break;
 		case 3:
 			double length_square;
-			std::cout << "Задайте длинну стороны квадрата: " << std::endl;
+			std::cout << "Set the length of the side of the square: " << std::endl;
 			std::cin >> length_square;
 			square->setLengthEdgeSquare(length_square);
 			square->setColour();
-			std::cout << "Задайте координаты центра квадрата: " << std::endl;
+			std::cout << "Set the coordinates of the center of the square: " << std::endl;
 			std::cin >> c_x >> c_y;
+			if (c_x != c_y) { std::cout << " Error, the sides of the square cannot be not equal! " << std::endl; break; }
 			square->setCoordinate(c_x, c_y);
 			square->setCoordinateDescRect();
 			std::cout << std::endl;
@@ -74,12 +69,13 @@ int main() {
 			break;
 		case 4:
 			double length_rectangle_1, length_rectangle_2;
-			std::cout << "Задайте длины сторон прямоугольника: " << std::endl;
+			std::cout << "Set the lengths of the sides of the rectangle: " << std::endl;
 			std::cin >> length_rectangle_1 >> length_rectangle_2;
 			rectangle->setLengthEdgeRectangle(length_rectangle_1, length_rectangle_2);
 			rectangle->setColour();
-			std::cout << "Задайте координаты центра прямоугольника: " << std::endl;
+			std::cout << "Set the coordinates of the center of the rectangle: " << std::endl;
 			std::cin >> c_x >> c_y;
+			if (c_x == c_y) { std::cout << " Error, the sides of the rectangle cannot be equal! " << std::endl; break; }
 			rectangle->setCoordinate(c_x, c_y);
 			rectangle->setCoordinateDescRect();
 			std::cout << std::endl;
@@ -89,9 +85,9 @@ int main() {
 			rectangle->getCoordinateDescRect();
 			break;
 		default:
-			std::cout << "Неверный ввод!" << std::endl;
+			std::cout << "Incorrect input!" << std::endl;
 		}
-		std::cout << "Желаете продолжить работу программы: (yes/no) " << std::endl;
+		std::cout << "Would you like to continue the work of the program: (yes/no) " << std::endl;
 		std::cin >> answer;
 	} while (answer == "yes");
 	

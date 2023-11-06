@@ -21,10 +21,13 @@ public:
 		des.coordinate_x4 = getCoordinateX() + (len_edge_squa / 2) + getStep();
 		des.coordinate_y4 = getCoordinateY() - (len_edge_squa / 2) - getStep();
 	}
+	
+	//____________________________________________________________//
+
 	void getName() {
-		std::cout << "Искомая фигура: " << name << std::endl;
+		std::cout << "The desired figure: " << name << std::endl;
 	}
-	double getArea() {
-		return len_edge_squa * len_edge_squa;
+	void getArea() {
+		std::cout << "The area of the figure: " << len_edge_squa * len_edge_squa << std::endl;
 	}
 };

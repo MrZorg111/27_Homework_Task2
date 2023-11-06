@@ -24,11 +24,14 @@ public:
 		des.coordinate_x4 = getCoordinateX() + (len_edge_tri / 2) + getStep();
 		des.coordinate_y4 = getCoordinateY() - (hight / 3) - getStep();
 	}
+
+	//___________________________________________________________________________//
+
 	void getName() {
-		std::cout << "Искомая фигура: " << name << std::endl;
+		std::cout << "The desired figure: " << name << std::endl;
 	}
 	void getArea() {
-		std::cout << "Площадь искомой фигуры равна: " << ((len_edge_tri / 2) * hight) << std::endl;
+		std::cout << "The area of the desired shape is equal to: " << ((len_edge_tri / 2) * hight) << std::endl;
 	}
 	
 };

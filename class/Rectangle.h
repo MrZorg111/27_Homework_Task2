@@ -21,11 +21,12 @@ public:
 		des.coordinate_y4 = getCoordinateY() - (higth / 2) - getStep();
 	}
 
+	//____________________________________________________________//
 
 	void getName() {
-		std::cout << "Искомая фигура: " << name << std::endl;
+		std::cout << "The desired figure: " << name << std::endl;
 	}
 	void getArea() {
-		std::cout << "Площадь фигуры: " << higth * width << std::endl;
+		std::cout << "The area of the figure: " << higth * width << std::endl;
 	}
 };
